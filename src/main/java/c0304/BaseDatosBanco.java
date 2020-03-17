@@ -47,26 +47,25 @@ public class BaseDatosBanco {
     }
     
     public double obtenerSaldoDisponible(int nroCuenta) {
-    	/* TODO
-        Pendiente de implementacion.
-        La logica de esta funcion seria:
-          a) Buscar en el arrayList el nroCuenta
-          b) recuperar y retornar el valor del saldoActual del nroCuenta */
-    	return 0.0;
+    	Cuenta c = this.buscarCuenta(nroCuenta);
+    	if (c != null) {
+    		return c.obtenerSaldoDisponible();
+    	} else {
+    		return 0.0;
+    	}
     }
     
     public void debitar(int nroCuenta, double monto) {
-    	/* TODO
-        La logica de esta funcion seria:
-          a) Buscar en el arrayList el nroCuenta
-          b) recuperar y ejecutar un debito por "monto" sobre la cuenta nroCuenta */
+    	Cuenta c = this.buscarCuenta(nroCuenta);
+    	if (c != null) {
+    		c.debitar(monto);
+    	} 
     }
     
     public void acreditar(int nroCuenta, double monto) {
-    	/* TODO
-        Pendiente de implementacion.
-        La logica de esta funcion seria:
-          a) Buscar en el arrayList el nroCuenta
-          b) recuperar y ejecutar un credito por "monto" sobre la cuenta nroCuenta */
+    	Cuenta c = this.buscarCuenta(nroCuenta);
+    	if (c != null) {
+    		c.acreditar(monto);;
+    	} 
     }
 }
