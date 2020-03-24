@@ -4,12 +4,12 @@ public class Fecha implements Comparable {
 	
 	private int dia;
 	private int mes;
-	private int año;
+	private int anio;
 	
 	public Fecha(int d, int m, int a) {
 		dia = d;
 		mes = m;
-		año = a;
+		anio = a;
 	}
 
 	public int getDia() {
@@ -28,18 +28,18 @@ public class Fecha implements Comparable {
 		this.mes = mes;
 	}
 
-	public int getAño() {
-		return año;
+	public int getAnio() {
+		return anio;
 	}
 
-	public void setAño(int año) {
-		this.año = año;
+	public void setAnio(int a) {
+		this.anio = a;
 	}
 	
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(dia).append("/").append(mes).append("/").append(año);
+		sb.append(dia).append("/").append(mes).append("/").append(anio);
 		return sb.toString();
 	}
 
@@ -49,12 +49,12 @@ public class Fecha implements Comparable {
 		//= 0 si este objeto es igual que arg0
 		//> 0 si este objeto es mayor que arg0
 		Fecha otraFecha = (Fecha) arg0;
-		if (this.getAño() > otraFecha.getAño()) {
+		if (this.getAnio() > otraFecha.getAnio()) {
 			return 1;
-		} else if (this.getAño() < otraFecha.getAño()) {
+		} else if (this.getAnio() < otraFecha.getAnio()) {
 			return -1;
 		} else {
-			//los años son iguales
+			//los aï¿½os son iguales
 			if (this.getMes() > otraFecha.getMes()) {
 				return 1;
 			} else if (this.getMes() < otraFecha.getMes()) {
